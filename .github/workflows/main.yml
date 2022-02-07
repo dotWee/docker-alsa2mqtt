@@ -29,7 +29,14 @@ jobs:
 
       - name: set up buildx
         uses: docker/setup-buildx-action@v1
-
+        
+      - name: login to github container registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ secrets.GH_REGISTRY_USERNAME }}
+          password: ${{ secrets.GH_REGISTRY_TOKEN }}
+          
       - name: docker meta
         id: meta
         uses: docker/metadata-action@v3
@@ -45,7 +52,8 @@ jobs:
             maintainer=Lukas Wolfsteiner <lukas@wolfsteiner.media>
             org.opencontainers.image.title=alsa2mqtt
             org.opencontainers.image.source=https://github.com/dotWee/docker-alsa2mqtt
-            
+          push: ${{ github.event_name == 'push' }}
+
       - name: build docker image
         uses: docker/build-push-action@v2
         with:
