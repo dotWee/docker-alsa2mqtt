@@ -37,6 +37,12 @@ jobs:
           username: ${{ secrets.GH_REGISTRY_USERNAME }}
           password: ${{ secrets.GITHUB_TOKEN }}
           
+      - name: login to docker hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
+          password: ${{ secrets.DOCKER_REGISTRY_TOKEN }}
+          
       - name: docker meta
         id: meta
         uses: docker/metadata-action@v3
