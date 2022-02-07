@@ -58,7 +58,6 @@ jobs:
             maintainer=Lukas Wolfsteiner <lukas@wolfsteiner.media>
             org.opencontainers.image.title=alsa2mqtt
             org.opencontainers.image.source=https://github.com/dotWee/docker-alsa2mqtt
-          push: ${{ github.event_name == 'push' }}
 
       - name: build docker image
         uses: docker/build-push-action@v2
@@ -67,3 +66,4 @@ jobs:
           platforms: linux/amd64
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          push: ${{ github.event_name == 'push' }}
