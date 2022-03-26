@@ -1,4 +1,9 @@
-# [docker-alsa2mqtt](https://github.com/dotWee/docker-alsa2mqtt)
+# [`dotwee/alsa2mqtt`](https://github.com/dotWee/docker-alsa2mqtt)
+
+![github status](https://img.shields.io/github/workflow/status/dotwee/docker-alsa2mqtt/Build%20&%20push%20docker%20image?logo=GitHub)
+![github activity](https://img.shields.io/github/last-commit/dotwee/docker-alsa2mqtt?logo=github)
+![github open issues](https://badgen.net/github/open-issues/dotwee/docker-alsa2mqtt?icon=github)
+![docker pulls](https://badgen.net/docker/pulls/dotwee/alsa2mqtt?icon=docker&label=pulls)
 
 - Syncs ALSA volume (same volume slider as in `alsamixer`) with MQTT
 - Publishes state of device to MQTT usually from `/proc/asound/card0/pcm0p/sub0/status`
@@ -81,6 +86,12 @@ $ docker pull dotwee/alsa2mqtt:latest
 ```bash
 $ docker pull ghcr.io/dotwee/alsa2mqtt:latest
 ```
+
+### available tags
+
+- `linux/arm/v7`
+- `linux/arm64`
+- `linux/amd64`
 
 #### or build it locally from [source](https://github.com/dotWee/docker-alsa2mqtt)
 
