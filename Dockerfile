@@ -1,5 +1,5 @@
 
-FROM node:14-buster
+FROM node:18-buster
 ENV NPM_CONFIG_LOGLEVEL info
 
 # Defaults to production, docker-compose overrides this to development on build and run.
